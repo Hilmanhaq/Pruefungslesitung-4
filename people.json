@@ -1,0 +1,32 @@
+[
+  {
+    "vorname": "rifdah",
+    "nachname": "adilarifah",
+    "geburtsjahr": 2004,
+    "wohnort": "bandung"
+  },
+  {
+    "vorname": "simon",
+    "nachname": "rigel",
+    "geburtsjahr": 1990,
+    "wohnort": "bremen"
+  },
+  {
+    "vorname": "muhammad hilman",
+    "nachname": "haqani",
+    "geburtsjahr": 2001,
+    "wohnort": "jakarta"
+  },
+  {
+    "vorname": "max",
+    "nachname": "mustermann",
+    "geburtsjahr": 2000,
+    "wohnort": "hamburg"
+  },
+  {
+    "vorname": "smith",
+    "nachname": "hartmann",
+    "geburtsjahr": 1987,
+    "wohnort": "berlin"
+  }
+]
