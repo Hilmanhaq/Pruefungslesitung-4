@@ -1,40 +1,44 @@
-# Bürgerregister Light – Persistenzmodul 1.0 – Bürgerregister speichern und laden
+# Portfolioprüfung, Teil 4 (Gruppenpräsentation) – Dokumentation und Code-Qualität Clean Code, Refactoring und Tests – begründet und reflektiert
 
-Dieses Repository bildet das Starterpaket für die Teilprüfung 2(Hausaufgabe: Bürgerregister speichern und laden).
+Dieses Repository bildet das Starterpaket für die Teilprüfung 4(Präsentation: Dokumentation und Code-Qualität Clean Code, Refactoring und Tests – begründet und reflektiert).
 
 ## Ziele
-1. das Prinzip von Persistenz (Datenübertragung) praktisch anwenden können,
-2. JSON als leichtgewichtiges, plattformunabhängiges Datenformat verstehen,
-3. eine saubere Schnittstelle für ein Persistenzmodul entwerfen können,
-4. Randfälle (leere, Dateien, fehlende Dateien, fehlerhafte Datensätze) systematisch behandeln,
-5. das Zusammenspiel von Modell (Person), Register (Buergerregister) und Persistenz (JsonPersistence) verstehen und
-6. einfache Roundtrip-Tests („save à load à compare“) formulieren und ausführen können.
+1. Codequalität gemeinsam analysieren und erklären kann,
+2. Clean-Code-Prinzipien konkret am eigenen Code veranschaulicht,
+3. Refactorings zielgerichtet auswählt, priorisiert und begründet,
+4. den Zusammenhang zwischen Codequalität, Refactoring und Tests versteht,
+5. sowie technische Entscheidungen sachlich verteidigen und reflektieren kann.
 
-## Code testen
-```bash
--CLI.py öffnen
--Code in CLI.py ausführen
--Neue Person anlegen (bei terminal) / Alle Personen anzeigen
--Sobald das CLI beendet wird, werden die eingegebenen Daten sofort gespeichert
--People.json öffnen (hier finden Sie die im System gespeicherten Daten)
+## Modulverantwortlichkeiten
+• 	models.py – Datenmodell der Person
+• 	validation.py – Validierung & Normalisierung von Eingaben
+• 	jsonpersistance.py – Laden & Speichern von Daten im JSON-Format
+• 	register.py – Geschäftslogik (CRUD)
+• 	CLI.py – einfache Kommandozeilenoberfläch
+
+## Clean Code Prinzpien
+Das Projekt wurde konsequent nach Clean-Code-Prinzipien überarbeitet:
+✔ Single Responsibility Principle
+Jedes Modul hat eine klar definierte Aufgabe (Validierung, Persistenz, Registerlogik).
+✔ Separation of Concerns
+Geschäftslogik, Datenhaltung und Benutzereingaben sind vollständig getrennt.
+✔ KISS (Keep It Simple)
+Funktionen sind kurz, eindeutig und leicht verständlich.
+✔ DRY (Don’t Repeat Yourself)
+Normalisierung, Validierung und Persistenzlogik sind zentralisiert und nicht dupliziert.
+✔ Meaningful Names
+Alle Funktionen und Variablen sind selbsterklärend benannt.
+
+## Refactoring--Fallstudien
+1. Auslagerung der Validierung in ein eigenes Modul
+2. Trennung der Presistenzschicht
+3. Normalisierung vor Validierung
+
+
+
 ```
 
-## Tests ausführen
-```bash
-pytest -vv
-```
 
-## Beispiel
-```python
-from src.buergerregister.models import Person
-from src.buergerregister.register import Buergerregister
-from src.buergerregister.validation import validiere_person
-from src.buergerregister.jsonpersistance import JsonPersistence
-
-register = JsonPersistence.load("people.json")
-print("\033[92mBürgerregister CLI gestartet.\033[0m")
-print("\033[94mDaten aus people.json geladen.\033[0m")
-```
 
 ## Dokumentation
 - Microsoft Word als Schriftliche Dokumentation
